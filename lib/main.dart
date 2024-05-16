@@ -1,9 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:olx_app/screens/main_page.dart';
 
 void main() {
-  runApp(App());
+  runApp(const App());
 }
 
 class App extends StatelessWidget {
@@ -11,9 +11,12 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: MainPage(),
+    return const ScreenUtilInit(
+      designSize: Size(375, 812),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: MainPage(),
+      ),
     );
   }
 }
